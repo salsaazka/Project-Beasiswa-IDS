@@ -23,13 +23,42 @@ class ScholarshipAppController extends Controller
     }
     public function create()
     {
-        
+       
     }
 
    
     public function store(Request $request)
     {
-        //
+        $request->validate=([
+            'name' => 'required',
+            'nis' => 'required',
+            'region' => 'required',
+            'ps' => 'required',
+            'image' => 'required|image|mimes:png,jpg,jpeg,gif,svg',
+        ]);
+
+        $image = $request->file('image');
+        $imgName = time().rand().'.'.$image->extension();
+
+        if(!file_exists(public_path('/assets/img/'.$image->getClientOriginalName()))){
+            //set untuk menyimpan file nya
+            $dPath = public_path('/assets/img/');
+            //memindahkan file yang diupload ke directory yang telah ditentukan
+            $image->move($dPath, $imgName);
+            $uploaded = $imgName;
+        }else{
+            $uploaded = $image->getClientOriginalName();
+        }
+        ScholarshipApp::create([
+            'name' => $request->name,
+            'nis' => $request->nis,
+            'region' => $request->region,
+            'ps' => $request->ps,
+            'image' => $request->image,
+           
+        ]);
+
+        return redirect('/form/submission')->with('success', 'Selamat, anda berhasil mengisi form!');
     }
 
     /**

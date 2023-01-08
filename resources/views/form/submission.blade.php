@@ -17,7 +17,22 @@
 <body > 
     <div class="container">
         <div class="col-6">
-            <form action="" method="POST" class="">
+          @if (Session::get('success'))
+            <div class="alert alert-success w-100">
+                {{ Session::get('success') }}
+            </div>  
+          @endif
+
+          @if ($errors->any())
+            <div class="alert alert-danger">
+             <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+         </div>
+        @endif
+            <form action="{{ route('store') }}" method="POST" class="">
                 @method('POST')
                  @csrf
                  
@@ -30,7 +45,7 @@
                  <!-- NIS input -->
                  <div class="form-outline mb-4">
                    <label class="form-label" >NIS</label>
-                   <input type="text" name="nis" class="form-control form-control-lg" />
+                   <input type="number" name="nis" class="form-control form-control-lg" />
                  </div>
 
                  <div class="form-outline mb-4">
@@ -77,6 +92,7 @@
                   </div>
 
                   <button type="submit" class="btn btn-primary offset-9">Upload Bukti </button>
+
                 </form>
         </div>
     </div>

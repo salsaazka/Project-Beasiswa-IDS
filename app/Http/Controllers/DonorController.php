@@ -13,16 +13,33 @@ class DonorController extends Controller
         //
     }
 
-    
+    public function donor()
+    {
+        return view('form.donor');
+    }
+
     public function create()
     {
         //
     }
 
     
-    public function store(Request $request)
+    public function storeDonor(Request $request)
     {
-        //
+        $request->validate=([
+            'name' => 'required',
+            'address' => 'required',
+            'profesi' => 'required',
+            'no_telp' => 'required'
+        ]);
+
+        Donor::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'profesi' => $request->name,
+            'no_telp' => $request->no_telp,
+        ]);
+        return redirect('/form/donor')->with('success', 'Selamat, anda berhasil mengisi form!');
     }
 
     
