@@ -53,7 +53,7 @@
                     <input type="text" name="profesi" class="form-control form-control-lg" />
                   </div>
        
-                  <div class="input-group mb-3">
+                  <div class="form-outline mb-4">
                     <label class="form-label" >Nomor Telepon</label>
                     <input type="number" name="no_telp" class="form-control form-control-lg" />
                   </div>
