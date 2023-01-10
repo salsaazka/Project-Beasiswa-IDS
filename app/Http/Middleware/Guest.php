@@ -23,7 +23,7 @@ class Guest
         //    return $next($request);      
         if(Auth::check()) {
             //kalau gak ada history login bakal dikembalikan ke halaman login dengan pesan error
-           return redirect()->route('admin.dashboard')->with('notAllowed', 'Anda sudah login!');
+           return redirect()->route('adminDash')->with('notAllowed', 'Anda sudah login!');
            }
            return $next($request);  
     }

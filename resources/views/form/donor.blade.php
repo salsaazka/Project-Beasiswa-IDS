@@ -16,7 +16,7 @@
 </head>
 <body > 
     <div class="container">
-        <div class="col-6">
+        <div class="col-6 mt-5">
           @if (Session::get('success'))
             <div class="alert alert-success w-100">
                 {{ Session::get('success') }}

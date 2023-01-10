@@ -32,7 +32,7 @@
             </ul>
          </div>
         @endif
-            <form action="{{ route('store') }}" method="POST" class="">
+            <form action="{{ route('store') }}" method="POST" class=""  enctype="multipart/form-data">
                 @method('POST')
                  @csrf
                  
@@ -51,7 +51,7 @@
                  <div class="form-outline mb-4">
                     <label class="form-label" >Rayon</label>
                     <select class="form-select" aria-label="Default select example" name="region" >
-                        <option selected>----</option>
+                        <option selected>--Select--</option>
                         <option value="Cis 1">Cis 1</option>
                         <option value="Cis 2">Cis 2</option>
                         <option value="Cis 3">Cis 3</option>

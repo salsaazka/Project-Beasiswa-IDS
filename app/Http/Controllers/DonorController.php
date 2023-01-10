@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Donor;
 use Illuminate\Http\Request;
+// use App\Exports\DonorsExport;
+// use Maatwebsite\Excel\Facades\Excel;
+// use App\Imports\DonorsImport;
 
 class DonorController extends Controller
 {
@@ -48,24 +51,30 @@ class DonorController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Donor  $donor
-     * @return \Illuminate\Http\Response
-     */
+    public function dataDonor($id)
+    {
+        $donors = Donor::where('id', Auth::user()->id)->first();
+        return view('admin.donor', compact('donors'));
+    }
+
     public function edit(Donor $donor)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Donor  $donor
-     * @return \Illuminate\Http\Response
-     */
+    // public function export()
+    // {
+    //     return Excel::download(new DonorsExport, 'Data.xlsx');
+
+    // }
+
+    // public function import()
+    // {
+    //     Excel::import(new DonorsImport,request()->file('file'));
+    //     return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
+
+    // }
+
     public function update(Request $request, Donor $donor)
     {
         //

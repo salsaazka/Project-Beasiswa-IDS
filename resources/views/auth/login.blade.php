@@ -16,11 +16,11 @@
 </head>
 <body > 
     <div class="content-sign" style="min-height: 100vh">
-        <div class="d-flex flex row">
-            <div class="col-lg-6" >
-                <div class="card">
-                    <img src="" alt="" class="">
-                </div>
+        <div class="d-flex flex row ">
+            <div class="d-flex justify-content-center col-lg-6 mt-5 pt-5" >
+                
+                    <img src="{{ asset('assets/img/animasi1.png') }}" alt="" class="">
+               
             </div>
             <div class="col-md-12 col-lg-5 col-xl-6 px-5 ">
                 @if ($errors->any())
@@ -37,7 +37,7 @@
                         {{ Session::get('notAllowed') }}
                     </div>  
                  @endif
-                 <div class="pt-5">
+                 <div class="mt-5 pt-5 ">
                     <h3 class="text-primary"><strong>Login</strong></h3>
                     <h5 class="text-muted">Hai, admin!</h5>
                  </div>

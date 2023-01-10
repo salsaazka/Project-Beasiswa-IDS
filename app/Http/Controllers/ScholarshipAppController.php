@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+// use App\Exports\ScholarshipAppsExport;
+// use Maatwebsite\Excel\Facades\Excel;
+// use App\Imports\ScholarshipAppsImport;
 
 class ScholarshipAppController extends Controller
 {
@@ -41,7 +44,7 @@ class ScholarshipAppController extends Controller
            if(Auth::user()->role == 'user'){
                return redirect('/');
            }else{
-               return redirect()->route('/admin/dashboard');
+               return redirect()->route('adminDash');
            }
         } else {
             return redirect('/login')->with('fail', 'Gagal login, silahkan periksa dan coba lagi!');
@@ -58,10 +61,9 @@ class ScholarshipAppController extends Controller
        
     }
    
-    public function store(Request $request)
+    public function store(Request $request, ScholarshipApp $scholarshipApp)
     {
-
-        $request->validate=([
+        $request->validate([
             'name' => 'required',
             'nis' => 'required',
             'region' => 'required',
@@ -72,9 +74,9 @@ class ScholarshipAppController extends Controller
         $image = $request->file('image');
         $imgName = time().rand().'.'.$image->extension();
 
-        if(!file_exists(public_path('/assets/img/bukti'.$image->getClientOriginalName()))){
+        if(!file_exists(public_path('/assets/img/bukti/'.$image->getClientOriginalName()))){
             //set untuk menyimpan file nya
-            $dPath = public_path('/assets/img/bukti');
+            $dPath = public_path('/assets/img/bukti/');
             //memindahkan file yang diupload ke directory yang telah ditentukan
             $image->move($dPath, $imgName);
             $uploaded = $imgName;
@@ -91,6 +93,8 @@ class ScholarshipAppController extends Controller
         ]);
 
         return redirect('/form/submission')->with('success', 'Selamat, anda berhasil mengisi form!');
+       
+       
     }
 
     public function adminDash()
@@ -112,6 +116,20 @@ class ScholarshipAppController extends Controller
     public function error(){
         return view('error');
      }
+
+     //excel
+    // public function export()
+    // {
+    //     return Excel::download(new ScholarshipAppsExport, 'Data.xlsx');
+
+    // }
+
+    // public function import()
+    // {
+    //     Excel::import(new ScholarshipAppsImport,request()->file('file'));
+    //     return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
+
+    // }
 
     public function show(ScholarshipApp $scholarshipApp)
     {
