@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class DonorController extends Controller
 {
-    
+
     public function index()
     {
         //
@@ -26,7 +26,7 @@ class DonorController extends Controller
         //
     }
 
-    
+
     public function storeDonor(Request $request)
     {
         $request->validate=([
@@ -45,15 +45,16 @@ class DonorController extends Controller
         return redirect('/form/donor')->with('success', 'Selamat, anda berhasil mengisi form!');
     }
 
-    
+
     public function show(Donor $donor)
     {
         //
     }
 
-    public function dataDonor($id)
+    public function dataDonor()
     {
-        $donors = Donor::where('id', Auth::user()->id)->first();
+        $donors = Donor::all();
+        // $donors = Donor::where('id', Auth::user()->id)->first();
         return view('admin.donor', compact('donors'));
     }
 
