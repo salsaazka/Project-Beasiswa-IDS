@@ -17,7 +17,22 @@
 <body > 
     <div class="container">
         <div class="col-6">
-            <form action="" method="POST" class="">
+          @if (Session::get('success'))
+            <div class="alert alert-success w-100">
+                {{ Session::get('success') }}
+            </div>  
+          @endif
+
+          @if ($errors->any())
+            <div class="alert alert-danger">
+             <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+         </div>
+        @endif
+            <form action="{{ route('store') }}" method="POST" class=""  enctype="multipart/form-data">
                 @method('POST')
                  @csrf
                  
@@ -30,13 +45,13 @@
                  <!-- NIS input -->
                  <div class="form-outline mb-4">
                    <label class="form-label" >NIS</label>
-                   <input type="text" name="nis" class="form-control form-control-lg" />
+                   <input type="number" name="nis" class="form-control form-control-lg" />
                  </div>
 
                  <div class="form-outline mb-4">
                     <label class="form-label" >Rayon</label>
                     <select class="form-select" aria-label="Default select example" name="region" >
-                        <option selected>----</option>
+                        <option selected>--Select--</option>
                         <option value="Cis 1">Cis 1</option>
                         <option value="Cis 2">Cis 2</option>
                         <option value="Cis 3">Cis 3</option>
@@ -77,6 +92,7 @@
                   </div>
 
                   <button type="submit" class="btn btn-primary offset-9">Upload Bukti </button>
+
                 </form>
         </div>
     </div>

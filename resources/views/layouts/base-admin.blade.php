@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PPDB Wikrama</title>
+    <title>Beasiswa Wikrama</title>
 
     {{-- Bootstrap --}}
     <link rel="stylesheet" href=" 	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
@@ -33,8 +33,9 @@
             <aside class="sidebar">
                 <a href="" class="sidebar-logo">
                     <div class="d-flex justify-content-start align-items-center">
-                        <img src="{{ url('assets/img/global/logo-wk.png') }}" class="logo">
-                        <span>Beasiswa Wikrama</span>
+                        <img src="{{ url('assets/img/logo-wk.png') }}" class="logo">
+                        <span>Beasiswa </span>
+                        
                     </div>
 
                 </a>
@@ -58,7 +59,7 @@
 
                 </a>
 
-                <a href="/" class="sidebar-item" onclick="toggleActive (this)">
+                <a href="/admin/submission" class="sidebar-item" onclick="toggleActive (this)">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -75,10 +76,10 @@
                             stroke="#ABB3C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
 
-                    <span>Data Pengajuan Donasi</span>
+                    <span>Pengajuan Beasiswa</span>
                 </a>
 
-                <a href="/" class="sidebar-item" onclick="toggleActive (this)">
+                <a href="/admin/donor" class="sidebar-item" onclick="toggleActive (this)">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -95,7 +96,7 @@
                             stroke="#ABB3C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
 
-                    <span>Data Pemberi Donasi</span>
+                    <span>Pemberi Donasi</span>
                 </a>
 
 
@@ -136,7 +137,7 @@
 
                 <div class="d-flex justify-content-between align-items-center nav-input-container">
                     <p class="mt-3">{{Auth::user()->name}}</p>
-                    <button class="btn-notif d-none d-md-block"><img src="{{ url('assets/img/global/person.svg') }}"
+                    <button class="btn-notif d-none d-md-block"><img src="{{ url('assets/img/person.svg') }}"
                             alt=""></button>
                 </div>
             </div>
