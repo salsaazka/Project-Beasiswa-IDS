@@ -34,8 +34,8 @@
                 <a href="" class="sidebar-logo">
                     <div class="d-flex justify-content-start align-items-center">
                         <img src="{{ url('assets/img/logo-wk.png') }}" class="logo">
-                        <span>Beasiswa </span>
-                        
+                        <span>Beasiswa</span>
+
                     </div>
 
                 </a>

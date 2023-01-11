@@ -34,7 +34,7 @@ Route::middleware(['Login', 'Role:admin'])->group(function(){
     Route::get('/donor/xls', [DonorController::class, 'exportDonor'])->name('export.xls');
     Route::post('/import/xls', [DonorController::class, 'importDonor'])->name('import.xls');
     Route::get('/admin/donor', [DonorController::class, 'dataDonor'])->name('admin.donor');
-    
+
 });
 
 
