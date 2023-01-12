@@ -18,9 +18,7 @@
     <div class="content-sign" style="min-height: 100vh">
         <div class="d-flex flex row ">
             <div class="d-flex justify-content-center col-lg-6 mt-5 pt-5" >
-                
-                    <img src="{{ asset('assets/img/animasi1.png') }}" alt="" class="">
-               
+                    <img src="{{ asset('assets/img/animasi1.png') }}" alt="" class=""> 
             </div>
             <div class="col-md-12 col-lg-5 col-xl-6 px-5 ">
                 @if ($errors->any())
@@ -60,10 +58,9 @@
            
                      
                      <!-- Submit button -->
-                     <center>
-                       <button type="submit" class="btn btn-primary btn-lg btn-block ">Sign in</button>
-                     </center>
-                   
+                     
+                       <button type="submit" class="btn btn-primary btn-md btn-block col-12">Sign in</button>
+                       <a href="{{ route('index') }}" class="btn btn-danger btn-md btn-block col-12 mt-3">Back</a>
                     </form>
             </div>
            

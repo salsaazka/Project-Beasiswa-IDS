@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-md navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand" id="#">
-                <img src="" alt="LogoWk" class="logoFan">
+                <img src="{{ asset('assets/img/logo-wk.png') }}" alt="LogoWk" class="logoFan">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

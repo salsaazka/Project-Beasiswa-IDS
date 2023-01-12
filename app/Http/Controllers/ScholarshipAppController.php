@@ -56,6 +56,19 @@ class ScholarshipAppController extends Controller
     {
         return view('form.submission');
     }
+
+    public function dataSub()
+    {
+        $submissions = ScholarshipApp::all();
+        return view('admin.submission', compact('submissions'));
+    }
+
+    public function image($id)
+    {
+        $submissions = ScholarshipApp::find($id);
+        return view('admin.image', compact('submissions'));
+    }
+
     public function create()
     {
        

@@ -54,7 +54,6 @@ class DonorController extends Controller
     public function dataDonor()
     {
         $donors = Donor::all();
-        // $donors = Donor::where('id', Auth::user()->id)->first();
         return view('admin.donor', compact('donors'));
     }
 

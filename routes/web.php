@@ -25,6 +25,8 @@ Route::middleware('Guest')->group(function(){
 Route::middleware(['Login', 'Role:admin'])->group(function(){
     Route::get('/admin/dashboard', [ScholarshipAppController::class, 'adminDash'])->name('adminDash');
     Route::get('/admin/admin',  [ScholarshipAppController::class, 'adminAd'])->name('adminAd');
+    Route::get('/admin/submission', [ScholarshipAppController::class, 'dataSub'])->name('admin.submission');
+    Route::get('admin/image/{id}', [ScholarshipAppController::class, 'image'])->name('image');
     Route::get('/submission/excel', [ScholarshipAppController::class, 'export'])->name('export.excel');
     Route::post('/import/excel', [ScholarshipAppController::class, 'import'])->name('import.excel');
 });

@@ -5,7 +5,7 @@
 @section('content')
 
     <div>
-        <a href="{{ route('index') }}" class="btn btn-secondary">Back</a>
+        <a href="{{ route('adminDash') }}" class="btn btn-secondary">Back</a>
             <div class="container overflow-hidden text-center mt-3">
                 @if (Session::get('successAdd'))
                     <div class="alert alert-success w-100">

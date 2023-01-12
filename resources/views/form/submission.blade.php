@@ -15,8 +15,13 @@
     {{-- End Bootstrap --}}
 </head>
 <body > 
-    <div class="container">
-        <div class="col-6">
+    <div class="content-sign px-3" style="min-height: 100vh">
+      <div class="d-flex flex row ">
+          <div class=" d-flex justify-content-center col-lg-6 mt-2 pt-2 " >
+            <img src="{{ asset('assets/img/form-beasiswa.png') }}" alt="" class="" style="width:80%;"> 
+          </div>
+
+        <div class="col-md-12 col-lg-5 col-xl-6 mt-2">
           @if (Session::get('success'))
             <div class="alert alert-success w-100">
                 {{ Session::get('success') }}
@@ -91,10 +96,12 @@
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                   </div>
 
-                  <button type="submit" class="btn btn-primary offset-9">Upload Bukti </button>
-
+                  <button type="submit" class="btn btn-primary btn-md btn-block col-12">Kirim</button>
+                  <a href="{{ route('index') }}" class="btn btn-secondary btn-md btn-block col-12 mt-3">Kembali</a>
+                   
                 </form>
         </div>
+      </div>
     </div>
 </body>
 </html>
