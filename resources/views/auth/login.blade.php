@@ -15,12 +15,12 @@
     {{-- End Bootstrap --}}
 </head>
 <body > 
-    <div class="content-sign" style="min-height: 100vh">
+    <div class="content-sign px-3" style="min-height: 100vh">
         <div class="d-flex flex row ">
-            <div class="d-flex justify-content-center col-lg-6 mt-5 pt-5" >
-                    <img src="{{ asset('assets/img/animasi1.png') }}" alt="" class=""> 
+            <div class="d-flex justify-content-center col-lg-6 mt-2 pt-3" >
+                    <img src="{{ asset('assets/img/animasi1.png') }}" alt="" class="" style="width: 95%"> 
             </div>
-            <div class="col-md-12 col-lg-5 col-xl-6 px-5 ">
+            <div class="col-md-12 col-lg-5 col-xl-6 pt-2">
                 @if ($errors->any())
                           <div class="alert alert-danger">
                            <ul>
@@ -35,7 +35,7 @@
                         {{ Session::get('notAllowed') }}
                     </div>  
                  @endif
-                 <div class="mt-5 pt-5 ">
+                 <div class="mt-2 pt-5">
                     <h3 class="text-primary"><strong>Login</strong></h3>
                     <h5 class="text-muted">Hai, admin!</h5>
                  </div>

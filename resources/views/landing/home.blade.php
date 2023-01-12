@@ -34,12 +34,6 @@
                         <a class="nav-link" href="#">Prosedur<a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/form/submission">Form Pengajuan<a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/form/donor">Form Donatur<a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
 
@@ -58,7 +52,7 @@
                 </p>
                 <div class="d-flex justify-content-center justify-content-md-start mt-4">
                     <button class="btn btn-donasi btn-primary me-1">
-                        <a href="/form/submission" class="text-white text-decoration-none">Donasi</a>
+                        <a href="/form/donor" class="text-white text-decoration-none">Donasi</a>
                     </button>
                     <button class="btn btn-donasi-outline btn-outline-primary">
                         <a href="/form/submission" class="text-decoration-none">Ajukan Beasiswa</a>
