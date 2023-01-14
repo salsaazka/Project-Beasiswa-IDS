@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Donor;
 use Illuminate\Http\Request;
-// use App\Exports\DonorsExport;
-// use Maatwebsite\Excel\Facades\Excel;
-// use App\Imports\DonorsImport;
+use App\Exports\DonorsExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\DonorsImport;
 
 class DonorController extends Controller
 {
@@ -62,18 +62,18 @@ class DonorController extends Controller
         //
     }
 
-    // public function export()
-    // {
-    //     return Excel::download(new DonorsExport, 'Data.xlsx');
+    public function export()
+    {
+        return Excel::download(new DonorsExport, 'Data.xlsx');
 
-    // }
+    }
 
-    // public function import()
-    // {
-    //     Excel::import(new DonorsImport,request()->file('file'));
-    //     return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
+    public function import()
+    {
+        Excel::import(new DonorsImport,request()->file('file'));
+        return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
 
-    // }
+    }
 
     public function update(Request $request, Donor $donor)
     {
