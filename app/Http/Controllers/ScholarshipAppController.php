@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ScholarshipAppController extends Controller
 {
-    
+
     public function index()
     {
         return view('landing.home');
@@ -31,7 +31,7 @@ class ScholarshipAppController extends Controller
             //required data harus diisi
             'email' => 'required|exists:users,email',
             'password' => 'required',
-            
+
         ],
         [
             'email.exists' => "email ini tidak tersedia"
@@ -39,7 +39,7 @@ class ScholarshipAppController extends Controller
         ]);
 
         $user = $request->only('email', 'password');
-        //auth fitur untuk menyimpan data dari login user 
+        //auth fitur untuk menyimpan data dari login user
         if (Auth::attempt($user)) {
            if(Auth::user()->role == 'user'){
                return redirect('/');
@@ -71,9 +71,9 @@ class ScholarshipAppController extends Controller
 
     public function create()
     {
-       
+
     }
-   
+
     public function store(Request $request, ScholarshipApp $scholarshipApp)
     {
         $request->validate([
@@ -102,12 +102,12 @@ class ScholarshipAppController extends Controller
             'region' => $request->region,
             'ps' => $request->ps,
             'image' => $request->image,
-           
+
         ]);
 
         return redirect('/form/submission')->with('success', 'Selamat, anda berhasil mengisi form!');
-       
-       
+
+
     }
 
     public function adminDash()
@@ -119,7 +119,7 @@ class ScholarshipAppController extends Controller
     {
         return view('admin.admin');
     }
-    
+
     public function logout()
     {
          Auth::logout();
@@ -149,13 +149,13 @@ class ScholarshipAppController extends Controller
         //
     }
 
-    
+
     public function edit(ScholarshipApp $scholarshipApp)
     {
         //
     }
 
-    
+
     public function update(Request $request, ScholarshipApp $scholarshipApp)
     {
         //
