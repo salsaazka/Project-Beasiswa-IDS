@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-// use App\Exports\ScholarshipAppsExport;
-// use Maatwebsite\Excel\Facades\Excel;
-// use App\Imports\ScholarshipAppsImport;
+use App\Exports\ScholarshipAppsExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ScholarshipAppsImport;
 
 class ScholarshipAppController extends Controller
 {
@@ -101,11 +101,11 @@ class ScholarshipAppController extends Controller
             'nis' => $request->nis,
             'region' => $request->region,
             'ps' => $request->ps,
-            'image' => $request->image,
+            'image' => $uploaded,
            
         ]);
 
-        return redirect('/form/submission')->with('success', 'Selamat, anda berhasil mengisi form!');
+        return redirect('/form/submission')->with('success', 'Selamat, anda berhasil mengisi form!')->with('image', $imgName);;
        
        
     }
@@ -131,18 +131,17 @@ class ScholarshipAppController extends Controller
      }
 
      //excel
-    // public function export()
-    // {
-    //     return Excel::download(new ScholarshipAppsExport, 'Data.xlsx');
+    public function export()
+    {
+        return Excel::download(new ScholarshipAppsExport, 'Data.xlsx');
+    }
 
-    // }
+    public function import()
+    {
+        Excel::import(new ScholarshipAppsImport,request()->file('file'));
+        return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
 
-    // public function import()
-    // {
-    //     Excel::import(new ScholarshipAppsImport,request()->file('file'));
-    //     return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
-
-    // }
+    }
 
     public function show(ScholarshipApp $scholarshipApp)
     {
