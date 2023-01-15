@@ -3,6 +3,8 @@
 @section('css')
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 @endsection
 
 @section('content')
@@ -64,7 +66,100 @@
             </div>
         </div>
     </div>
+
+    <div class="container" style="margin-top: 5rem">
+        <div class="d-flex flex-column-reverse flex-md-row align-items-center w-100">
+            <div class="w-100 w-md-50">
+                <img src="{{ asset('assets/img/animasi.png') }}" class="w-100" alt="" />
+            </div>
+            <div class="w-100 w-md-50 mt-3 mt-md-0 text-center text-md-start">
+                <h2 class="text-primary ms-3">Daftar Program Beasiswa</h2>
+                <ol>
+                    <li>Beasiswa Penghargaan Non-Akademik</li>
+                    <li>Beasiswa Penghargaan Akademis</li>
+                    <li>Beasiswa Program Bantuan</li>
+                    <li>Beasiswa kedinasan</li>
+                    <li>Beasiswa dari donor interasional</li>
+                    <li>......</li>
+                </ol>
+                <div class="d-flex justify-content-center justify-content-md-start mt-4 ms-3">
+                    <button class="btn btn-donasi-outline btn-outline-primary">
+                        <a href="/form/submission" class="text-decoration-none">Lihat Lebih</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Countries Available-->
+    <div class="container">
+        <div class="wrapperCountryAvaialble">
+            <div class="content">
+                <div class="text">
+                    <h1>You can send your plants to these countries.</h1>
+                </div>
+
+                <div class="wrapperImagesCountry">
+                    <div class="lineCountry lineCountry1">
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="lineCountry lineCountry2">
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                        <div class="country">
+                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Countries Available-->
 @endsection
 
 @section('js')
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script>
+    $('.lineCountry1').slick({
+        infinite:false,
+        slidesToShow: 2.5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+    $('.lineCountry2').slick({
+        slidesToShow: 2.5,
+        infinite:false,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+</script>
 @endsection

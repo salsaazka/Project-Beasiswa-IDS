@@ -113,3 +113,72 @@ body {
 .btn-donasi-outline:hover a{
     color: #fff !important;
 }
+
+
+.wrapperCountryAvaialble {
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    padding-top: 7rem;
+  }
+
+  .wrapperCountryAvaialble .content {
+    display: flex;
+    align-items: center;
+  }
+
+  .wrapperCountryAvaialble .content .text {
+    width: 50%;
+    margin-right: 2rem;
+  }
+
+  .wrapperCountryAvaialble .content .text h1 {
+    color: #535353;
+  }
+
+  .wrapperCountryAvaialble .content .wrapperImagesCountry {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapperCountryAvaialble .content .wrapperImagesCountry .lineCountry {
+    display: flex;
+  }
+
+  .wrapperCountryAvaialble .content .wrapperImagesCountry .lineCountry .country {
+    margin: .2rem;
+  }
+
+  .wrapperCountryAvaialble .content .wrapperImagesCountry .lineCountry .country img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .wrapperCountryAvaialble .content {
+      flex-direction: column;
+    }
+    .wrapperCountryAvaialble .content .text {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .wrapperCountryAvaialble .content .wrapperImagesCountry {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .wrapperCountryAvaialble .content .wrapperImagesCountry .lineCountry {
+      display: flex;
+    }
+    .wrapperCountryAvaialble .content .wrapperImagesCountry .lineCountry .country {
+      margin: .2rem;
+    }
+    .wrapperCountryAvaialble .content .wrapperImagesCountry .lineCountry .country img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
