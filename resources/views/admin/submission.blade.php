@@ -18,8 +18,19 @@
                     </div>
                 @endif
                 <div class="d-flex justify-content-end pb-2">
-                    <a href="/data/excel" class="btn btn-success " target="_blank">Export Excel</a>
+                    <a href="{{ route('export.excel')}}" class="btn btn-success " target="_blank">Export Excel</a>
                 </div>
+                <form action="{{ route('import.excel') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row">
+                        <div class="col-10">
+                            <input type="file" name="file" class="form-control">
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="btn btn-success">Import</button>
+                        </div>
+                    </div>       
+                </form>
                 <div class="wrapperTable table-responsive">
                     <table id="donorTable" class="tables" style="width:100%">
                         <thead>

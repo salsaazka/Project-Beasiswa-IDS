@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Route;
 use App\Models\ScholarshipApp;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Exports\ScholarshipAppsExport;
+use App\Exports\ScholarshipsExport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\ScholarshipAppsImport;
+use App\Imports\ScholarshipsImport;
 
 class ScholarshipAppController extends Controller
 {
@@ -133,12 +134,12 @@ class ScholarshipAppController extends Controller
      //excel
     public function export()
     {
-        return Excel::download(new ScholarshipAppsExport, 'Data.xlsx');
+        return Excel::download(new ScholarshipsExport, 'Data.xlsx');
     }
 
     public function import()
     {
-        Excel::import(new ScholarshipAppsImport,request()->file('file'));
+        Excel::import(new ScholarshipsImport,request()->file('file'));
         return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
 
     }

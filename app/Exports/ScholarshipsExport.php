@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\Export;
+use App\Models\ScholarshipApp;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
@@ -20,7 +20,7 @@ class ScholarshipsExport implements FromCollection
     }
     public function collection()
     {
-        return Export::select(
+        return ScholarshipApp::select(
             "name",
             "nis",
             "region",
