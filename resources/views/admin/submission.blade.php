@@ -27,7 +27,7 @@
                             <input type="file" name="file" class="form-control">
                         </div>
                         <div class="col-2">
-                            <button type="submit" class="btn btn-success">Import</button>
+                            <button type="submit" class="btn btn-primary">Import</button>
                         </div>
                     </div>       
                 </form>
