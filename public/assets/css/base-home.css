@@ -16,7 +16,17 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+.btn-wa{
+  padding: 0.5rem 1.5rem;
+  background-color: #189D0E;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+}
 
+.btn-wa:hover{
+  color: white;
+}
 /* Navbar */
 
 /* .navbar .container {

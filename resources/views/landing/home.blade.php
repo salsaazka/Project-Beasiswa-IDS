@@ -3,8 +3,8 @@
 @section('css')
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="{{ url('assets/css/carousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/carousel/owl.theme.default.min.css') }}">
 @endsection
 
 @section('content')
@@ -26,19 +26,23 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Program Beasiswa</a>
+                        <a class="nav-link" href="#program">Program Beasiswa</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Dokumentasi</a>
+                        <a class="nav-link " href="#dokumentasi">Dokumentasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Prosedur<a>
+                        <a class="nav-link" href="#prosedur">Prosedur<a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
-
+                    <!-- Cookie -->
+                    <div class="fixed-bottom d-flex justify-content-end" style="bottom: 15px; right: 15px;">
+                         <a href="https://wa.me/+6281909242411" class="btn-wa"><b>Chat Us</b> Now! <img src="../public/assets/image/whatsapp-logo-png-2260 1.png" alt=""></a>
+                     </div>
+                    <!-- End Cookie -->
                 </ul>
             </div>
         </div>
@@ -67,85 +71,93 @@
         </div>
     </div>
 
-    <div class="container" style="margin-top: 5rem">
+    <div class="container" id="program" style="margin-top: 5rem">
         <div class="d-flex flex-column-reverse flex-md-row align-items-center w-100">
-            <div class="w-100 w-md-50">
-                <img src="{{ asset('assets/img/animasi.png') }}" class="w-100" alt="" />
+            <div class="w-65 w-md-20">
+                <img src="{{ asset('assets/img/beasiswa.jpg') }}" class="w-75 " alt="" style="border-radius: 10px" />
             </div>
-            <div class="w-100 w-md-50 mt-3 mt-md-0 text-center text-md-start">
+            <div class="w-35 w-md-50 mt-3 mt-md-0 ">
                 <h2 class="text-primary ms-3">Daftar Program Beasiswa</h2>
                 <ol>
                     <li>Beasiswa Penghargaan Non-Akademik</li>
                     <li>Beasiswa Penghargaan Akademis</li>
                     <li>Beasiswa Program Bantuan</li>
-                    <li>Beasiswa kedinasan</li>
-                    <li>Beasiswa dari donor interasional</li>
+                    <li>Beasiswa Kedinasan</li>
+                    <li>Beasiswa dari Donatur Interasional</li>
                     <li>......</li>
                 </ol>
                 <div class="d-flex justify-content-center justify-content-md-start mt-4 ms-3">
                     <button class="btn btn-donasi-outline btn-outline-primary">
-                        <a href="/form/submission" class="text-decoration-none">Lihat Lebih</a>
+                        <a href="/form/submission" class="text-decoration-none">Ajukan Disini!</a>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Countries Available-->
-    <div class="container">
-        <div class="wrapperCountryAvaialble">
-            <div class="content">
-                <div class="text">
-                    <h1>You can send your plants to these countries.</h1>
-                </div>
-
-                <div class="wrapperImagesCountry">
-                    <div class="lineCountry lineCountry1">
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
+    <div class="mt-5" id="dokumentasi">
+        <h2 class="text-center text-primary">Dokumentasi</h2>
+        <div class="row mt-4">
+            <div class="large-12 columns">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="{{ asset('assets/img/foto5.JPG') }}">
                     </div>
-
-                    <div class="lineCountry lineCountry2">
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
-                        <div class="country">
-                            <img src="{{ asset('assets/img/animasi.png') }}" alt="">
-                        </div>
+                    <div class="item">
+                        <img src="{{ asset('assets/img/foto5.JPG') }}">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('assets/img/foto5.JPG') }}">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('assets/img/foto5.JPG') }}">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('assets/img/foto5.JPG') }}">
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('assets/img/foto5.JPG') }}">
                     </div>
                 </div>
             </div>
         </div>
+
+        {{-- End Main Content --}}
+
     </div>
-    <!--End Countries Available-->
+    <div class="mt-5 pb-2" id="prosedur">
+        <h2 class="text-center text-primary">Prosedur</h2>
+        <div class="row mt-4 px-3">
+            <div class="card col-3 m-5 ">
+                <img src="{{ asset('assets/img/p-kelTangguh.jpeg') }}" alt="">
+            </div>
+            <div class="card col-3 m-5">
+                <img src="{{ asset('assets/img/p-talenta.jpeg') }}" alt="">
+            </div>
+            <div class="card col-3 m-5 ">
+                <img src="{{ asset('assets/img/p-yatim & dhuafa.jpg') }}" alt="">
+            </div>
+        </div>
+    </div>
+    
 @endsection
 
 @section('js')
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="{{ url('assets/js/owl.carousel.js') }}"></script>
+        <script>
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 4,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true
+            });
+        </script>
 <script>
     $('.lineCountry1').slick({
         infinite:false,

@@ -6,7 +6,7 @@ use App\Models\ScholarshipApp;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ScholarshipsExport implements FromCollection
+class ScholarshipsExport implements FromCollection, WithHeadings
 {
    
     public function headings(): array

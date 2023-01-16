@@ -20,17 +20,7 @@
                 <div class="d-flex justify-content-end pb-2">
                     <a href="{{ route('export.excel')}}" class="btn btn-success " target="_blank">Export Excel</a>
                 </div>
-                <form action="{{ route('import.excel') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-                        <div class="col-10">
-                            <input type="file" name="file" class="form-control">
-                        </div>
-                        <div class="col-2">
-                            <button type="submit" class="btn btn-primary">Import</button>
-                        </div>
-                    </div>       
-                </form>
+               
                 <div class="wrapperTable table-responsive">
                     <table id="donorTable" class="tables" style="width:100%">
                         <thead>
@@ -40,7 +30,7 @@
                                 <th style="width: 10%">NIS</th>
                                 <th style="width: 10%">Rayon</th>
                                 <th style="width: 10%">Pembimbing</th>
-                                <th style="width: 20%">Bukti Foto</th>
+                                <th style="width: 10%">Bukti Foto</th>
 
                             </tr>
                         </thead>
@@ -57,6 +47,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                   
                 </div>
             </div>
     </div>

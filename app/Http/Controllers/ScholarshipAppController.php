@@ -137,13 +137,6 @@ class ScholarshipAppController extends Controller
         return Excel::download(new ScholarshipsExport, 'Data.xlsx');
     }
 
-    public function import()
-    {
-        Excel::import(new ScholarshipsImport,request()->file('file'));
-        return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
-
-    }
-
     public function show(ScholarshipApp $scholarshipApp)
     {
         //

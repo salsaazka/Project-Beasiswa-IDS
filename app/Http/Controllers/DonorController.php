@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Route;
 use App\Models\Donor;
 use Illuminate\Http\Request;
 use App\Exports\DonorsExport;
@@ -62,13 +63,13 @@ class DonorController extends Controller
         //
     }
 
-    public function export()
+    public function exportDonor()
     {
         return Excel::download(new DonorsExport, 'Data.xlsx');
 
     }
 
-    public function import()
+    public function importDonor()
     {
         Excel::import(new DonorsImport,request()->file('file'));
         return back()->with('importSuccess',"Selamat Anda berhasil menginport file!");
